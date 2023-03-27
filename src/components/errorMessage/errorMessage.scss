@@ -1,0 +1,16 @@
+@use "sass:math";
+@import "../../style/mixins.scss";
+
+.error {
+	margin: 0 auto;
+
+	// .error__image
+	width: rem(250);
+	&__image {
+		position: relative;
+		padding-bottom: percent(250,250);
+		img{ 
+			position: absolute;width: 100%;height: 100%;top: 0;left: 0;
+		}
+	}
+}

@@ -1,0 +1,103 @@
+@use "sass:math";
+@import "../../style/mixins";
+@import "../../style/style";
+
+.app {
+
+	// .app__comics
+
+	&__comics-app {
+	}
+}
+.comics-app {
+	margin-top: rem(49);
+	@include adaptiveValue("padding-bottom", 50, 35);
+	// .comics__container
+
+	&__container {
+	}
+
+	// .comics__list
+
+	&__list {
+	}
+
+	//.comics__button
+
+	&__button{
+		margin-bottom: rem(0);
+	}
+}
+.list-comics {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(rem(225), 1fr));
+	@include adaptiveValue("gap", 55, 30);
+	justify-items: center;
+	// .list-comics__item
+
+	&__item {
+	}
+}
+.item-comics {
+
+	// .item-comics__image
+	width: rem(225);
+	display: flex;
+	flex-direction: column;
+
+	&__image {
+		position: relative;
+		padding-bottom: percent(346,225); 	
+		img {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			transition: transform 0.8s ease 0s;
+		}
+		@media (any-hover: hover){
+			&:hover{
+				img {
+					transform: scale(1.05);;
+				}
+			}
+		}
+	}
+
+	// .item-comics__body
+
+	&__body {
+		margin-top: rem(10);
+	}
+
+	// .item-comics__title
+
+	&__title {
+		line-height: math.div(16 , 14);
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+
+	// .item-comics__link-title
+
+	&__link-title {
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				color: #9F0013;
+			}
+		}
+	}
+
+	// .item-comics__price
+
+	&__price {
+		margin-top: rem(9);
+		text-transform: uppercase;
+		opacity: 0.6;
+		font-weight: 700;
+		line-height: math.div(16 , 14);
+	}
+}

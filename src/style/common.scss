@@ -1,0 +1,55 @@
+.button {
+	padding: rem(11) rem(18);
+	display: inline-block;
+	text-align: center;
+	text-transform: uppercase;
+	color: #fff;
+	min-width: rem(101);
+	line-height: math.div(16 , 14);
+	border: none;
+	background-color: transparent;
+	position: relative;
+	transition: transform 0.3s ease 0s;
+	overflow: hidden;
+	clip-path: 
+	polygon(
+	  0% rem(12),                 /* top left */
+	  rem(12) 0%,                 /* top left */
+	  calc(100% - 20px) 0%,    /* top right */
+	  100% 0,               /* top right */
+	  100% calc(100% - rem(12)),  /* bottom right */
+	  calc(100% - rem(12)) 100%,  /* bottom right */
+	  0 100%,               /* bottom left */
+	  0 calc(100% - 20px)      /* bottom left */
+	);
+	&-main{
+		background-color: #9F0013;
+	}
+	&-long {
+		display: block;
+		margin: rem(45) auto;
+		padding: rem(10) rem(50);
+	}
+	&-secondary{
+		background-color: #5C5C5C;
+	}
+	@media (any-hover: hover){
+		&:hover{
+			transform: translateY(rem(-5));;
+		}
+	}
+}
+.app{
+	position: relative;
+	&__decoration{
+		img{
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			z-index: -1;
+		}
+		@media (max-width:$mobile){
+			 display: none; 
+		}
+	}
+}

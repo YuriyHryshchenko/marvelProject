@@ -1,0 +1,77 @@
+@use "sass:math";
+@import "../../style/mixins";
+@import "../../style/style.scss";
+.app {
+
+	// .app__header
+
+	&__header {
+
+	}
+}
+.header-app {
+
+	// .header-app__container
+
+	&__container {
+		min-height: rem(137);
+		display: flex;
+		align-items: center;
+		@media (max-width:$mobile){
+			 flex-direction: column; 
+			 justify-content: center;
+			 row-gap: rem(15);
+		}
+		justify-content: space-between;
+	}
+
+	// .header-app__title
+
+	&__title {
+		@include adaptiveValue("font-size", 28, 23);
+		font-weight: 700;
+		line-height: math.div(37 , 28);
+		span {
+			color: #9F0013;
+		}
+		@media (any-hover: hover){
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+
+	// .header-app__menu
+
+	&__menu {
+	}
+}
+.menu {
+
+	// .menu__list
+
+	&__list {
+		display: flex;
+		gap: rem(8);
+		@include adaptiveValue("font-size", 24, 19);
+		font-weight: 700;
+		line-height: math.div(32, 24);
+	}
+
+	// .menu__item
+
+	&__item {
+		
+	}
+
+	// .menu__link
+
+	&__link {
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				color: #9F0013;
+			}
+		}
+	}
+}

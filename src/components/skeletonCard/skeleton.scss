@@ -1,0 +1,56 @@
+@use "sass:math";
+@import "../../style/mixins";
+@import "../../style/style.scss";
+
+.content-app {
+
+	// .content-app__skeleton
+
+	&__skeleton {
+	}
+}
+.skeleton {
+	background-color: #fff;
+	align-self: flex-start;
+	padding: rem(25);
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+	@media (max-width:$mobile){
+		margin-bottom: rem(50); 
+  	}
+	// .skeleton__title
+
+	&__title {
+		text-align: center;
+		font-weight: 700;
+		font-size: rem(21);
+	}
+
+	// .skeleton__header
+
+	&__header {
+		margin-top: rem(33);
+		display: flex;
+		align-items: center;
+		gap: rem(9);
+	}
+
+	// .skeleton__main
+
+	&__main {
+		margin-top: rem(15);
+		&:not(:last-child) {margin-bottom: rem(15);}
+	}
+}
+.header-skeleton {
+
+	// .header-skeleton__circle
+
+	&__circle {
+	}
+
+	// .header-skeleton__line
+
+	&__line {
+		width: 100%;
+	}
+}

@@ -1,0 +1,65 @@
+@use "sass:math";
+@import "../../style/mixins";
+@import "../../style/style";
+
+.app {
+
+	// .app__banner
+
+	&__banner {
+	}
+}
+.banner {
+	// .banner_text
+
+	&__text {
+		@include adaptiveValue("font-size", 24, 19);
+		font-weight: 700;
+		color: #fff;
+		line-height: math.div(28 , 24);
+		margin-left: rem(83);
+		@media (max-width:$mobile){
+			 margin: 0; 
+		}
+	}
+
+	// .banner__container
+
+	&__container {
+
+	}
+
+	&__inner {
+		display: grid;
+		padding: rem(0) rem(25) rem(0) rem(45);
+		grid-template-columns: rem(152) auto rem(132);
+		background-color: #232222;
+		align-items: center;
+		@media (max-width:$mobile){
+			 grid-template-columns: 1fr 1fr; 
+
+		}
+		@media (max-width:$mobileSmall){
+			 grid-template-columns: 1fr; 
+			 justify-items: center;
+			 padding: rem(10) rem(0) rem(0) rem(0);
+		}
+	}
+
+	// .banner__image
+
+	&__image {
+		@media (max-width:$mobile){
+			  display: none;
+		}
+	}
+
+	// .banner__logo
+
+	&__logo {
+		@media (min-width:$mobileSmall){
+			 justify-self: end; 
+			 margin-top: rem(5);
+		}
+	}
+}
