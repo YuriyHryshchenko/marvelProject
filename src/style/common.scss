@@ -27,7 +27,7 @@
 	}
 	&-long {
 		display: block;
-		margin: rem(45) auto;
+		margin: 0 auto rem(45) auto;
 		padding: rem(10) rem(50);
 	}
 	&-secondary{
@@ -37,6 +37,9 @@
 		&:hover{
 			transform: translateY(rem(-5));;
 		}
+	}
+	&:disabled {
+		background-color: gray;
 	}
 }
 .app{
