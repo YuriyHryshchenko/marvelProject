@@ -30,6 +30,7 @@
 }
 .list-comics {
 	display: grid;
+	margin-bottom: rem(45);
 	grid-template-columns: repeat(auto-fit, minmax(rem(225), 1fr));
 	@include adaptiveValue("gap", 55, 30);
 	justify-items: center;
