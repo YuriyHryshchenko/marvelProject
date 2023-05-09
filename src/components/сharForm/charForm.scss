@@ -1,0 +1,105 @@
+@use "sass:math";
+@import "../../style/mixins";
+@import "../../style/style";
+.content-app {
+
+	// .content-app__form
+
+	&__form {
+		margin-top: rem(30);
+		padding: rem(25);
+	}
+}
+.char-form {
+	@media (max-width:$mobile){
+		margin-bottom: rem(50); 
+  	}
+	background-color: #fff;
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+
+	// .char-form__title
+
+	&__title {
+		font-weight: 700;
+		font-size: rem(18);
+		line-height: math.div(21 , 18);		
+		&:not(:last-child) {margin-bottom: rem(18);}
+		@media (max-width:em(1100)){
+			text-align: center;
+	 	}
+	}
+
+	&__page-button{
+		@media (min-width:em(1100)){
+			  grid-column-start: 2;
+		}
+	}
+
+	&__successful{
+		color: #03710E;
+		font-weight: 700;
+		@include adaptiveValue("font-size", 18, 14);
+		line-height: math.div(21 , 18);
+		@media (max-width:em(1100)){
+			order: 1
+	 	}
+	}
+
+	&-error {
+		@include adaptiveValue("font-size", 18, 14);
+		line-height: math.div(21 , 18);
+		color: #9F0013;
+		grid-column: 1 / -1;
+		font-weight: 700;
+		@media (max-width:em(1100)){
+			grid-row-start: 2;
+	 	}
+	}
+	&__notfound {
+		@include adaptiveValue("font-size", 18, 14);
+		line-height: math.div(21 , 18);
+		color: #9F0013;
+		grid-column: 1 / -1;
+		font-weight: 700;
+	}
+
+	// .char-form__form
+
+	&__form {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		@include adaptiveValue("gap", 24, 14);
+		@media (max-width:em(1100)){
+			grid-template-columns: 1fr;
+		}
+	}
+
+	// .char-form__input
+
+	&__input {
+		height: rem(38);
+		width: rem(250);
+		@media (max-width:em(1100)){
+			width: 100%;
+		 }
+		text-indent: rem(10);
+		box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+		&::placeholder{
+			font-size: rem(14);
+			line-height: math.div(16 , 14);
+			color: rgba(0, 0, 0, 0.5);
+			padding: rem(10) rem(168) rem(10) rem(0);
+		}
+		&:focus{
+			outline: 1px solid #9F0013;
+		}
+	}
+
+	// .char-form__button
+
+	&__button {
+	}
+}
+.error{
+	margin-top: rem(20);
+}

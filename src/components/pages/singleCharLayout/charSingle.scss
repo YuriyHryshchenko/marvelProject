@@ -1,15 +1,15 @@
 @use "sass:math";
-@import "../../style/mixins";
-@import "../../style/style";
+@import "../../../style/mixins";
+@import "../../../style/style";
 
 .app {
 
 	// .app_single
 
-	&_single {
+	&__single {
 	}
 }
-.single-comic {
+.single-char {
 	margin-top: rem(50);
 	// .single-comic__container
 
@@ -17,6 +17,9 @@
 		display: flex;
 		@include adaptiveValue("column-gap", 127, 40, 0, 1100, 768);
 		row-gap: rem(10);
+		@media (min-width:$mobile){
+			 justify-content: space-between; 
+		}
 		@include adaptiveValue("padding-bottom", 150, 50);
 		@media (max-width:$mobile){
 			 flex-direction: column-reverse; 
@@ -44,7 +47,7 @@
 
 	&__image {
 		position: relative;
-		padding-bottom: percent(450,293);
+		padding-bottom: percent(293,293);
 		img{
 			position: absolute;
 			width: 100%;
@@ -70,59 +73,15 @@
 	// .single-comic__title
 
 	&__title {
+		text-transform: uppercase;
 		font-size: rem(22);
 		line-height: math.div(26 , 22);
 		font-weight: 700;
-
 	}
 
 	// .single-comic__text
 
 	&__text {
 		margin-top: rem(28);
-
-	}
-
-	// .single-comic__pages
-
-	&__pages {
-		margin-top: rem(40);
-	}
-
-	// .single-comic__language
-
-	&__language {
-		margin-top: rem(28);
-	}
-
-	// .single-comic__price
-
-	&__price {
-		margin-top: rem(28);
-		font-size: rem(24);
-		line-height: math.div(28 , 24);
-		color: #9F0013;
-	}
-
-	// .single-comic__link
-
-	&__link {
-		@media (max-width:$mobile){
-			 align-self: flex-end;
-		}
-	}
-
-	// .single-comic__link-back
-
-	&__link-back {
-		@include adaptiveValue("font-size", 18, 16);
-		font-weight: 700;
-		line-height: math.div(21 , 18);
-		transition: color 0.3s ease 0s;
-		@media (any-hover: hover){
-			&:hover{
-				color: #9F0013;
-			}
-		}
 	}
 }

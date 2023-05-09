@@ -5,6 +5,7 @@ import useMarvelService from "../../services/MarvelService";
 import Spinner from "../spinner/Spinner";
 import ErrorMessage from "../errorMessage/ErrorMessage";
 import SkeletonCard from "../skeletonCard/SkeletonCard"
+import CharForm from "../сharForm/CharForm";
 const CharInfo = (props) => {
 
 	const [char, setChar] = useState(null);

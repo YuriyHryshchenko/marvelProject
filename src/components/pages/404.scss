@@ -1,0 +1,33 @@
+@use "sass:math";
+@import "../../style/mixins";
+.app {
+
+	// .app__page
+
+	&__page {
+	}
+}
+.not-found {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: rem(30);
+	font-size: rem(24);
+
+	// .not-found__title
+
+	&__title {
+	}
+
+	// .not-found__link
+
+	&__link {
+		font-weight: 700;
+		transition: color 0.3s ease 0s;
+		@media (any-hover: hover){
+			&:hover{
+				color: #9F0013;
+			}
+		}
+	}
+}

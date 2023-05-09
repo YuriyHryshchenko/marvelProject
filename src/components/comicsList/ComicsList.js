@@ -1,8 +1,6 @@
 import "./comicsList.scss";
-import uw from "../../resources/img/uw.png";
-import xmen from "../../resources/img/xmen.png";
-
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import useMarvelService from "../../services/MarvelService";
 import ErrorMessage from "../errorMessage/ErrorMessage";
 import Spinner from "../spinner/Spinner";
@@ -40,10 +38,10 @@ const ComicsList = () => {
 		const items = arr.map((item,i) => {
 			return (
 				<li key={i} className="list-comics__item item-comics">
-					<a href="#" className="item-comics__image"><img src={item.thumbnail} alt={item.title} style={item.thumbnail === "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg" ? {objectPosition: 'left'} : null}/></a>
+					<Link to={`/comics/${item.id}`} className="item-comics__image"><img src={item.thumbnail} alt={item.title} style={item.thumbnail === "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg" ? {objectPosition: 'left'} : null}/></Link>
 					<div className="item-comics__body">
 						<h4 className="item-comics__title">
-							<a href="#" className="item-comics__link-title">{item.title}</a>
+							<Link to={`/comics/${item.id}`} className="item-comics__link-title">{item.title}</Link>
 						</h4>
 						<div className="item-comics__price">{item.price}</div>
 					</div>
