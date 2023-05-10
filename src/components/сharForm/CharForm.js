@@ -9,7 +9,7 @@ import ErrorMessage from "../errorMessage/ErrorMessage";
 
 const CharForm = () => {
 	const [char, setChar] = useState(null);
-	const {getCharacterByName, error, loading, clearError} = useMarvelService();
+	const {getCharacterByName, error, clearError} = useMarvelService();
 
 
 	const onCharLoaded = (char) => {

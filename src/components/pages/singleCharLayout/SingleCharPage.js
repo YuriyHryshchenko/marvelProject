@@ -1,4 +1,5 @@
 
+import { Helmet } from "react-helmet";
 import "./charSingle.scss";
 
 const SingleCharPage = ({data}) => {
@@ -6,6 +7,10 @@ const SingleCharPage = ({data}) => {
 
 	return (
 		<div className="app__single single-char">
+			<Helmet>
+				<meta name="description" content={`${name} char information`}/>
+				<title>{name}</title>
+			</Helmet>
 			<div className="single-char__container">
 				<div className="single-char__inner">
 					<div className="single-char__item">
