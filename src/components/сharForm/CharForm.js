@@ -9,13 +9,12 @@ import ErrorMessage from "../errorMessage/ErrorMessage";
 
 const CharForm = () => {
 	const [char, setChar] = useState(null);
-	const {getCharacterByName, error, clearError} = useMarvelService();
+	const {getCharacterByName, process, setProcess, clearError} = useMarvelService();
 
 
 	const onCharLoaded = (char) => {
 		setChar(char);
 	}
-
 	
 	const results = !char ? null : char.length > 0 ?
 			<>
@@ -25,7 +24,7 @@ const CharForm = () => {
 			:
 			<div className="char-form__notfound">The character was not found. Check the name and try again</div>
 		
-	const errorMessage = error ? <ErrorMessage/> : null;
+	const errorMessage = process === 'error' ? <ErrorMessage/> : null;
 	return(
 		<div className="content-app__form char-form">
 			<h2 className="char-form__title">Or find a character by name:</h2>
@@ -41,18 +40,15 @@ const CharForm = () => {
 					clearError();
 					getCharacterByName(values.char)
 						.then(onCharLoaded)
-						.finally(setSubmitting(false));
+						.then(() => setProcess('confirmed'));
 				}}
 			>
-				{({isSubmitting}) => (
-					<Form className="char-form__form">
-						<Field type="text" className="char-form__input" name='char' placeholder="Enter name"/>
-						<button type="submit" className="char-form__button button button-main" disabled={isSubmitting}>FIND</button>
-						<FormikErrorMessage name="char" className="char-form__error char-form-error" component="div" />
-						{results}
-					</Form>
-
-				)}
+				<Form className="char-form__form">
+					<Field type="text" className="char-form__input" name='char' placeholder="Enter name"/>
+					<button type="submit" className="char-form__button button button-main" disabled={process === 'loading'}>FIND</button>
+					<FormikErrorMessage name="char" className="char-form__error char-form-error" component="div" />
+					{results}
+				</Form>
 			</Formik>
 			{errorMessage}
 		</div>
